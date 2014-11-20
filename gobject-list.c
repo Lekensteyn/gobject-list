@@ -194,7 +194,7 @@ _dump_object_list (GHashTable *hash)
 }
 
 static void
-_sig_usr1_handler (int signal)
+_sig_usr1_handler (G_GNUC_UNUSED int signal)
 {
   g_print ("Living Objects:\n");
 
@@ -204,7 +204,7 @@ _sig_usr1_handler (int signal)
 }
 
 static void
-_sig_usr2_handler (int signal)
+_sig_usr2_handler (G_GNUC_UNUSED int signal)
 {
   GHashTableIter iter;
   gpointer obj, type;
@@ -310,7 +310,7 @@ get_func (const char *func_name)
 }
 
 static void
-_object_finalized (gpointer data,
+_object_finalized (G_GNUC_UNUSED gpointer data,
     GObject *obj)
 {
   G_LOCK (gobject_list);
