@@ -411,7 +411,7 @@ _object_finalized (G_GNUC_UNUSED gpointer data,
   g_hash_table_remove (gobject_list_state.objects, obj);
   g_hash_table_remove (gobject_list_state.added, obj);
 #ifdef WITH_ORIGINS_TRACE
-  g_hash_table_remove (gobject_list_state.origins, obj);
+  g_hash_table_remove (gobject_list_state.origins, G_OBJECT_TYPE_NAME (obj));
 #endif
 
   G_UNLOCK (gobject_list);
